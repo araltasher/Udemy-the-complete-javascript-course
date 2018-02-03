@@ -91,13 +91,13 @@ if (isMarried === 'yes') {
 
 isMarried = true;
 
-if(isMarried) {
+if (isMarried) {
     console.log('YES!');
 } else {
     console.log('NO!');
 }
 
-if(isMarried) {
+if (isMarried) {
     console.log('YES!');
 }
 
@@ -154,29 +154,28 @@ John and a friend invented a simple game where the player with the highest value
 
 4. EXTRA: Add a third player and now decide who wins. Hint: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
 
+*/
 
-// SOLUTION:
+
 var heightJohn = 170;
 var heightMike = 195;
 var ageJohn = 36;
 var ageMike = 29;
 
-var scoreJohn = heightJohn + 5 * ageJohn;
-var scoreMike = heightMike + 5 * ageMike;
-
+let scoreMike = heightMike + 5 * ageMike;
+let scoreJohn = heightJohn + 5 * ageJohn;
 
 if (scoreJohn > scoreMike) {
     console.log('John wins the game with ' + scoreJohn + ' points!');
 } else if (scoreMike > scoreJohn) {
-    console.log('Mike wins the game with ' + scoreMike + ' points!');
-} else if (scoreJohn === scoreMike) {
+    console.log('John wins the game with ' + scoreJohn + ' points!');
+} else {
     console.log('There is a draw.');
 }
 
 var heightMary = 158;
 var ageMary = 31;
-var scoreMary = heightMary + 5 * ageMary;
-
+let scoreMary = heightMary + 5 * ageMary;
 
 if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
     console.log('John wins the game with ' + scoreJohn + ' points!');
@@ -187,7 +186,7 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 } else {
     console.log('It\'s a draw.');
 }
-*/
+
 
 
 
