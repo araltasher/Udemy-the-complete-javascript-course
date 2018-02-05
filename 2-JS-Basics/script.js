@@ -42,7 +42,7 @@ console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + 
 //var lastName = prompt('What is the last name?');
 //console.log(lastName);
 
-alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
+//alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried + '.');
 
 
 
@@ -123,7 +123,7 @@ if (age < 20) {
 
 var job = 'teacher';
 
-job = prompt('What does john do?');
+//job = prompt('What does john do?');
 
 switch (job) {
     case 'teacher':
@@ -193,7 +193,7 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 ///////////////////////////////////////
 // Lecture: Functions
 
-/*
+
 function calculateAge(yearOfBirth) {
     var age = 2016 - yearOfBirth;
     return age;
@@ -219,13 +219,13 @@ function yearsUntilRetirement(name, year) {
 yearsUntilRetirement('John', 1990);
 yearsUntilRetirement('Mike', 1969);
 yearsUntilRetirement('Mary', 1948);
-*/
+
 
 
 
 ///////////////////////////////////////
 // Lecture: Statements and expressions
-/*
+
 function someFun(par) {
     //code
 }
@@ -242,13 +242,12 @@ var x = 3;
 if (x === 5) {
     //do soemthing
 }
-*/
 
 
 
 ///////////////////////////////////////
 // Lecture: Arrays
-/*
+
 var names = ['John', 'Jane', 'Mark'];
 var years = new Array(1990, 1969, 1948);
 
@@ -268,13 +267,13 @@ console.log(john);
 if (john.indexOf('teacher') === -1) {
     console.log('John is NOT a teacher.');
 }
-*/
+
 
 
 
 ///////////////////////////////////////
 // Lecture: Objects
-/*
+
 var john = {
     name: 'John',
     lastName: 'Smith',
@@ -305,7 +304,7 @@ jane['job'] = 'retired';
 jane['isMarried'] = true;
 
 console.log(jane);
-*/
+
 
 
 
@@ -333,7 +332,7 @@ var age = john.calculateAge();
 john.age = age;
 
 console.log(john);
-
+*/
 
 
 //v2.0
@@ -362,7 +361,7 @@ var mike = {
 
 mike.calculateAge();
 console.log(mike);
-*/
+
 
 
 
@@ -443,7 +442,7 @@ Example output: [true, false, true]
 Hint: you can use a loop not only to read from an array, like y[i], but also to set values in an array, like y[i] = ... You can also use the specific array methods.
 */
 
-/*
+
 function printFullAge(years) {
     var ages = [];
     var fullAges = [];
@@ -468,7 +467,7 @@ function printFullAge(years) {
 var years = [2001, 1985, 1994, 2014, 1973];
 var full_1 = printFullAge(years);
 var full_2 = printFullAge([2012, 1915, 1999]);
-*/
+
 
 
 
