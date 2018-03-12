@@ -23,9 +23,18 @@ body {
     font-weight: 400;
 }
 
-.right { float: right; }
-.red { color: #FF5049 !important; }
-.red-focus:focus { border: 1px solid #FF5049 !important; }
+.right {
+    float: right;
+}
+
+.red {
+    color: #333333 !important;
+}
+
+.red-focus:focus {
+    border: 1px solid #333333 !important;
+}
+
 
 /**********************************************
 *** TOP PART
@@ -33,9 +42,15 @@ body {
 
 .top {
     height: 40vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top left, #38ef7d, #11998e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top left, #38ef7d, #11998e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: relative;
 }
 
@@ -71,18 +86,18 @@ body {
 
 .budget__income {
     margin-bottom: 10px;
-    background-color: #28B9B5;
+    background-color: #1ED760;
 }
 
 .budget__expenses {
-    background-color: #FF5049;
+    background-color: #333333;
 }
 
 .budget__income--text,
 .budget__expenses--text {
     float: left;
     font-size: 13px;
-    color: #444;
+    color: #fff;
     margin-top: 2px;
 }
 
@@ -112,7 +127,9 @@ body {
 *** BOTTOM PART
 **********************************************/
 
+
 /***** FORM *****/
+
 .add {
     padding: 14px;
     border-bottom: 1px solid #e7e7e7;
@@ -149,14 +166,19 @@ body {
     transition: border 0.3s;
 }
 
-.add__description { width: 400px;}
-.add__value { width: 100px;}
+.add__description {
+    width: 400px;
+}
+
+.add__value {
+    width: 100px;
+}
 
 .add__btn {
     font-size: 35px;
     background: none;
     border: none;
-    color: #28B9B5;
+    color: #1ED760;
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
@@ -164,18 +186,24 @@ body {
     margin-left: 10px;
 }
 
-.add__btn:active { transform: translateY(2px); }
+.add__btn:active {
+    transform: translateY(2px);
+}
 
 .add__type:focus,
 .add__description:focus,
 .add__value:focus {
     outline: none;
-    border: 1px solid #28B9B5;
+    border: 1px solid #1ED760;
 }
 
-.add__btn:focus { outline: none; }
+.add__btn:focus {
+    outline: none;
+}
+
 
 /***** LISTS *****/
+
 .container {
     width: 1000px;
     margin: 60px auto;
@@ -199,16 +227,26 @@ h2 {
     margin-bottom: 15px;
 }
 
-.icome__title { color: #28B9B5; }
-.expenses__title { color: #FF5049; }
+.icome__title {
+    color: #1ED760;
+}
+
+.expenses__title {
+    color: #333333;
+}
 
 .item {
     padding: 13px;
     border-bottom: 1px solid #e7e7e7;
 }
 
-.item:first-child { border-top: 1px solid #e7e7e7; }
-.item:nth-child(even) { background-color: #f7f7f7; }
+.item:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+
+.item:nth-child(even) {
+    background-color: #f7f7f7;
+}
 
 .item__description {
     float: left;
@@ -233,15 +271,14 @@ h2 {
 
 .income .item__value,
 .income .item__delete--btn {
-    color: #28B9B5;
+    color: #1ED760;
 }
 
 .expenses .item__value,
 .expenses .item__percentage,
 .expenses .item__delete--btn {
-    color: #FF5049;
+    color: #333333;
 }
-
 
 .item__delete {
     float: left;
@@ -258,21 +295,36 @@ h2 {
     display: none;
 }
 
-.item__delete--btn:focus { outline: none; }
-.item__delete--btn:active { transform: translateY(2px); }
+.item__delete--btn:focus {
+    outline: none;
+}
 
-.item:hover .item__delete--btn { display: block; }
-.item:hover .item__value { transform: translateX(-20px); }
-.item:hover .item__percentage { transform: translateX(-20px); }
+.item__delete--btn:active {
+    transform: translateY(2px);
+}
 
+.item:hover .item__delete--btn {
+    display: block;
+}
+
+.item:hover .item__value {
+    transform: translateX(-20px);
+}
+
+.item:hover .item__percentage {
+    transform: translateX(-20px);
+}
 
 .unpaid {
     background-color: #FFDAD9 !important;
     cursor: pointer;
-    color: #FF5049;
-
+    color: #333333;
 }
 
-.unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
-.unpaid:hover .item__description { font-weight: 900; }
+.unpaid .item__percentage {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
 
+.unpaid:hover .item__description {
+    font-weight: 900;
+}
