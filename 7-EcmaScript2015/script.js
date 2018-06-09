@@ -552,24 +552,22 @@ class Park extends Town {
 }
 
 class Street extends Town {
-  constructor(name, year, length, size = 0) {
+  constructor(name, year, length, size = 3) {
     super(name, year);
     this.length = length;
     this.size = size;
   }
 
   decideSize() {
-    //let size;
-    switch (this.size) {
-      case 2:
-        return "Small";
-      case 4:
-        return "Big";
-      case 5:
-        return "Huge";
-      default:
-        return "Normal";
-    }
+
+    const classification = new Map();
+    classification.set(2, 'Small');
+    classification.set(1, 'Tiny');
+    classification.set(3, 'Medium');
+    classification.set(4, 'Big');
+    classification.set(5, 'Huge');
+
+    return (classification.get(this.size));
   }
 }
 
@@ -590,20 +588,20 @@ const densityResults = allParks.map(
     `${cur.name} has a tree density of ${cur.treeDensity()} trees per square km`
 );
 
-const totalAge = allParks.reduce(function(total, currentValue) {
+const totalAge = allParks.reduce(function (total, currentValue) {
   return total + currentValue.calculateAge();
 }, 0);
 
 const largeParks = allParks.filter(cur => cur.lotsOfTrees());
 
-const streetLength = allStreets.reduce(function(total, currentValue) {
+const streetLength = allStreets.reduce(function (total, currentValue) {
   return total + currentValue.length;
 }, 0);
 
 console.log("----PARKS REPORT----");
 console.log(
   `Our ${allParks.length} parks have an average of ${totalAge /
-    allParks.length} years\n`
+  allParks.length} years\n`
 );
 densityResults.forEach(el => console.log(el));
 largeParks.forEach(el =>
@@ -614,9 +612,9 @@ largeParks.forEach(el =>
 console.log("----STREETS REPORT----");
 console.log(
   `Our ${
-    allStreets.length
+  allStreets.length
   } streets have a total length of ${streetLength}km, with an average of ${streetLength /
-    allStreets.length}km.`
+  allStreets.length}km.`
 );
 allStreets.forEach(el =>
   console.log(`${el.name}, built in ${el.year}, is a ${el.decideSize()} street`)
