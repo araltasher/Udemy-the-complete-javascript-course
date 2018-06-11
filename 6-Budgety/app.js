@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 //  BUDGET CONTROLLER
 const budgetController = (function () {
   let Expense = function (id, description, value) {
