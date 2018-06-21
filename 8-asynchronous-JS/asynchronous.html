@@ -105,7 +105,6 @@
         // getRecipesAW().then(result => console.log(`${result} is the best ever!`));
         function getWeather(woeid) {
             fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woeid}`).then(res => {
-                console.log(res);
                 return res.json();
             }).then(data => {
                 const today = data.consolidated_weather[0];
@@ -116,6 +115,26 @@
 
         getWeather(2487956);
         getWeather(44418);
+
+        async function getWeatherAW(woeid) {
+            try {
+                const result = await fetch(`https://crossorigin.me/https://www.metaweather.com/api/location/${woeid}`);
+                const data = await result.json();
+                const tomorrow = data.consolidated_weather[1];
+                console.log(`Temperatures in ${data.title} stay between ${tomorrow.min_temp} and ${tomorrow.max_temp}`);
+                return data;
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        getWeatherAW(2487956);
+
+        let dataLondon;
+        getWeatherAW(44418).then(data => {
+            dataLondon = data;
+            console.log(dataLondon);
+        });
 
     </script>
 </body>
