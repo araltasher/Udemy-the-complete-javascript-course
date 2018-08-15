@@ -43,6 +43,7 @@ const controlSearch = async () => {
       //  Render results on UI
       clearLoader();
       searchView.renderResults(state.search.result);
+      
     } catch (err) {
       alert('Something wrong with the search...');
       clearLoader();
@@ -79,11 +80,15 @@ const controlRecipe = async () => {
     recipeView.clearRecipe();
     renderLoader(elements.recipe);
 
+    //  Highlight Selected item
+    if (state.search) {
+      searchView.highlightSelected(id);
+    }
+
+    //  Create a new recipe object
+    state.recipe = new Recipe(id);
+
     try {
-      //  Create a new recipe object
-      state.recipe = new Recipe(id);
-
-
       //  Get the recipe data and parse ingredients
       await state.recipe.getRecipe();
       state.recipe.parseIngredients();
