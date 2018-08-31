@@ -24,6 +24,6 @@ export default class Likes {
   }
 
   getNumLikes() {
-    this.likes.length;
+   return this.likes.length;
   }
 }
